@@ -54,6 +54,11 @@ await build({
   publicPath: '/vendor/',
   sourcemap: false,
   minify: true,
-  logLevel: 'info'
+  logLevel: 'info',
+  external: ['node:*', 'fs', 'fs/promises', 'module', 'path', 'crypto', 'stream', 'util', 'os'],
+  define: {
+    'process.env': '{}',
+    global: 'window'
+  }
 });
 console.log('Build complete. Static site is ready in ./public');
