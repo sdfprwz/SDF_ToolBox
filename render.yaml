@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: sdf-toolbox
+    runtime: static
+    buildCommand: npm install --no-audit --no-fund && npm run build
+    staticPublishPath: ./public
